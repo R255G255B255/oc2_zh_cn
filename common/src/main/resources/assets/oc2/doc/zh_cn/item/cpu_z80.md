@@ -14,7 +14,7 @@
 - 1x [电脑](../block/computer.md)
 - 1x Z80 处理器
 - 1x [**CP/M**闪存固件](flash_memory.md)
-- 1x 接在总线上的[磁盘驱动器](../block/disk_drive.md)，里面装有一张 [**CP/M**软盘](floppy.md)
+- 1x 接在总线上的[磁盘驱动器](../block/disk_drive.md)，里面装有一张[**CP/M**软盘](floppy.md)
 - 1x [内存](memory.md)，任意容量
 
 给它通电并开机。引导程序会找到系统软盘，并把 CP/M 启动到提示符 `A>`。运行 `DIR` 可以查看磁盘中包含什么内容：

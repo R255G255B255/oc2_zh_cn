@@ -2,7 +2,7 @@
 ![打破第四面墙！](item:oc2:file_import_export_card)
 
 文件导入/导出卡允许突破第四面墙。它可以：
-- 将文件从你的真实计算机上传到虚拟 [计算机](../block/computer.md)。
+- 将文件从你的真实计算机上传到虚拟[计算机](../block/computer.md)。
 - 将文件从虚拟计算机下载到你的真实计算机。
 
 为方便起见，默认 Linux 发行版提供了两个用于这些操作的工具脚本：`import.lua` 和 `export.lua`。
@@ -14,4 +14,4 @@
 这两个脚本都会提示当前正在与计算机终端交互的所有用户。对于上传操作（`import.lua`），第一个上传的文件会被使用，其余客户端上的提示会被取消。对于下载操作，所有客户端都会被提供保存导出文件的选项。
 
 ## API
-程序通过 `file_import_export` 设备驱动该卡，这也是 `import.lua` 和 `export.lua` 所使用的设备。有关其方法，请参见 [文件导入/导出设备](../device/file_import_export.md) 参考。
+程序通过 `file_import_export` 设备驱动该卡，这也是 `import.lua` 和 `export.lua` 所使用的设备。有关其方法，请参见[文件导入/导出设备](../device/file_import_export.md)参考。
