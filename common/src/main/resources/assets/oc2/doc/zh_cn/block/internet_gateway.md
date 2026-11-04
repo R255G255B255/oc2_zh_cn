@@ -1,28 +1,28 @@
-# Internet Gateway
-![Wired](block:oc2:internet_gateway)
+# 互联网网关
+![连线](block:oc2:internet_gateway)
 
-The internet gateway connects a network of [network connectors](network_connector.md) to the world outside the game, so every [computer](computer.md) on that network can use it. Attach it to a [network connector](network_connector.md) the same way a computer is attached.
+互联网网关将一组 [网络连接器](network_connector.md) 连接到现实中的互联网，因此该网络上的每台 [计算机](computer.md) 都可以使用它。把它连接到 [网络连接器](network_connector.md) 的方式和连接计算机相同。
 
-**Servers decide whether this works at all.** Operators choose which addresses are allowed, and can switch it off entirely.
+**服务器决定它是否真的可用。** 运营方可以选择允许哪些地址，并且可以完全关闭它。
 
-The gateway consumes energy for every packet it transmits, in both directions, and drops packets when insufficiently powered.
+网关会在每次传输数据包时消耗能源，且在双向传输中都会消耗；如果供电不足，它会丢弃数据包。
 
-## Setting Up a Computer
+## 设置计算机
 
-Computers access the gateway through an ordinary [network interface card](../item/network_interface_card.md), so under the default Linux distribution this is just ethernet and the usual tools work.
+计算机通过普通的 [网络接口卡](../item/network_interface_card.md) 访问网关，因此在默认 Linux 发行版下，这本质上就是普通以太网，常用工具都能正常工作。
 
-There is no DHCP server behind the gateway, so pick the addresses yourself. Any private range will do, as long as the gateway address you name is on the same subnet as the computer:
+网关后面没有 DHCP 服务器，所以你需要自己选择地址。任何私有地址范围都可以，只要你指定的网关地址和计算机处于同一子网即可：
 
 `ip addr add 10.0.0.2/24 dev eth0`
 `ip link set eth0 up`
 `ip route add default via 10.0.0.1`
 
-The gateway answers to whichever address you point the default route at. There is no name server behind it either, so set one in `/etc/resolv.conf`. Name lookups then travel as ordinary traffic, and are subject to the same address restrictions as everything else.
+网关会响应你将默认路由指向的任意地址。它后面也没有名称服务器，因此需要在 `/etc/resolv.conf` 中自行设置。名称解析随后会像普通流量一样传输，并受与其他流量相同的地址限制。
 
-The commands above last until the next reboot. `setup-network.lua` does all of this and writes it to `/etc/network/interfaces`, so it survives a reboot. It will also offer to run a DHCP server on the computer. Every other computer on the network then needs no setup at all: it asks the DHCP server for an address, the route out and a name server.
+上面的命令会在下一次重启前一直生效。`setup-network.lua` 会处理这些配置，并把它写到 `/etc/network/interfaces` 中，因此它会在重启后继续生效。它还会提供在计算机上运行 DHCP 服务器的选项。网络中的其他计算机则完全不需要额外设置：它们会向 DHCP 服务器请求地址、路由和名称服务器。
 
-TCP, UDP and ping are supported. Connections can only be opened outwards: nothing on the internet can connect to a computer.
+支持 TCP、UDP 和 ping。连接只能向外发起：互联网中的任何东西都不能连接到计算机。
 
-`https://` addresses work, but **without certificate verification**, because the default Linux does not ship a list of trusted authorities. The traffic is protected from passive observers, but there is no guarantee the remote is not a man-in-the-middle. Treat it accordingly, and do not send passwords you care about through it.
+`https://` 地址可用，但**不进行证书校验**，因为默认 Linux 没有内置可信证书颁发机构列表。流量对被动观察者来说是受保护的，但不能保证远端没有中间人攻击。请据此处理，并且不要通过它发送你在意的密码。
 
-Connections do not survive the chunk unloading or the server restarting. Treat this as a temporary connection failure and handle it accordingly.
+连接不会在区块卸载或服务器重启后保留。把它视为临时连接失败并按此处理。

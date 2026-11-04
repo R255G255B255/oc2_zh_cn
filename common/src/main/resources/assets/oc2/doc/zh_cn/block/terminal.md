@@ -1,13 +1,13 @@
-# Terminal
+# 终端
 ![Remote viewing](block:oc2:terminal)
 
-A terminal is a standalone screen and keyboard without the rest of the computer, connected to a serial bus using a [network connector](network_connector.md). It reads and writes serial data verbatim. Use a [serial card](../item/serial_interface_card.md) in a computer to enable interaction with the computer.
+终端是一台独立的显示器和键盘，没有计算机主体本身，它通过 [网络连接器](network_connector.md) 接入串行总线。它会按原样读取和写入串行数据。要让计算机能与它交互，需要在计算机中使用 [串口卡](../item/serial_interface_card.md)。
 
-On Linux, use `getty` to spawn a session on the terminal:  
+在 Linux 上，可以使用 `getty` 在终端上创建一个会话：  
 `setsid getty -L ttyS1 9600 screen &`
 
-On CP/M, switch to an external terminal like so:  
-`STAT CON:=TTY:`.
+在 CP/M 上，可以这样切换到外部终端：  
+`STAT CON:=TTY:`。
 
-## Configuration
-Configure the terminal address and baud rate in its settings screen. To access this screen, either open the terminal with a [wrench](../item/wrench.md), or switch to the settings screen using the toggle button on the left of the terminal screen.
+## 配置
+在其设置界面中配置终端地址和波特率。要访问这个界面，可以用 [扳手](../item/wrench.md) 打开终端，或者使用终端屏幕左侧的切换按钮切到设置界面。

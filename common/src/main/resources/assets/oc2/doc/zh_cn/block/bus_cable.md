@@ -1,5 +1,5 @@
 # 总线线缆
-![派对巴士](block:oc2:bus_cable)
+![运输组件](block:oc2:bus_cable)
 
 总线线缆通过 [总线接口](bus_interface.md) 到电脑。
 

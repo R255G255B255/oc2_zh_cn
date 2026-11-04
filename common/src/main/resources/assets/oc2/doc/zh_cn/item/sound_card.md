@@ -1,12 +1,12 @@
-# Sound Card
+# 声卡
 ![Less sound of silence](item:oc2:sound_card)
 
-The sound card provides a means for computers to emit arbitrary audio signals.
+声卡使计算机能够发出任意音频信号。
 
-On a Linux system, sound cards will typically appear as `/dev/dsp` devices. To send data to the sounds card, it is possible to write to this device. The simplest way to play audio is to write raw samples to `/dev/dsp` like so: `cat sound.raw > /dev/dsp`
+在 Linux 系统中，声卡通常会显示为 `/dev/dsp` 设备。要向声卡发送数据，可以直接写入这个设备。最简单的播放方式是像下面这样向 `/dev/dsp` 写入原始采样：`cat sound.raw > /dev/dsp`
 
-Opened like this, `/dev/dsp` expects mono audio at 8000 samples per second, one unsigned byte per sample. Audio in any other format has to be converted first, or the program playing it has to configure the device to match.
+按这种方式打开时，`/dev/dsp` 期望接收单声道音频，采样率为每秒 8000 次，每个采样为一个无符号字节。任何其他格式的音频都必须先转换，或者播放程序必须自行配置设备以匹配该格式。
 
-The card supports mono audio at up to 22050 samples per second.
+该卡支持的单声道音频采样率最高为每秒 22050 个采样。
 
-Computers have to be shut down before installing or removing this component. Installing it while the computer is running will have no effect, removing it may lead to system errors.
+安装或移除该组件前，必须先关闭计算机。计算机运行时安装不会生效，移除则可能导致系统错误。

@@ -1,17 +1,17 @@
-# File Import/Export Card
-![Tear down this wall!](item:oc2:file_import_export_card)
+# 文件导入/导出卡
+![打破第四面墙！](item:oc2:file_import_export_card)
 
-The file import/export card allows breaking the fourth wall. It allows:
-- uploading files from your real computer into a virtual [computer](../block/computer.md).
-- downloading files from a virtual computer onto your real computer.
+文件导入/导出卡允许突破第四面墙。它可以：
+- 将文件从你的真实计算机上传到虚拟 [计算机](../block/computer.md)。
+- 将文件从虚拟计算机下载到你的真实计算机。
 
-For added convenience, the default Linux distribution provides two utility scripts for these operations, `import.lua` and `export.lua`.
+为方便起见，默认 Linux 发行版提供了两个用于这些操作的工具脚本：`import.lua` 和 `export.lua`。
 
-`import.lua` will, when run, prompt for a file to upload to the virtual computer. The file will be stored in the current working directory. If a file with the name of the imported file already exists, the option to provide an alternative name will be offered.
+`import.lua` 在运行时会提示你选择要上传到虚拟计算机的文件。该文件会被存储到当前工作目录中。如果同名文件已经存在，则会提供一个可选的替代文件名。
 
-`export.lua` takes as its parameter the path to a file in a virtual computer. It then downloads this file to your real computer and offers a save dialog, offering the choice of where to save the downloaded file, or to cancel the operation.
+`export.lua` 接受一个虚拟计算机中文件的路径作为参数。随后它会将这个文件下载到你的真实计算机，并弹出保存对话框，让你选择下载文件的保存位置，或者取消该操作。
 
-Both scripts will prompt all users currently interacting with the computer's terminal. For upload operations (`import.lua`), the first uploaded file will be used. The prompts on other clients will be canceled. For download operations all clients will be offered to save the exported file.
+这两个脚本都会提示当前正在与计算机终端交互的所有用户。对于上传操作（`import.lua`），第一个上传的文件会被使用，其余客户端上的提示会被取消。对于下载操作，所有客户端都会被提供保存导出文件的选项。
 
 ## API
-Programs drive the card through the `file_import_export` device, which is what `import.lua` and `export.lua` use. See the [file import/export device](../device/file_import_export.md) reference for its methods.
+程序通过 `file_import_export` 设备驱动该卡，这也是 `import.lua` 和 `export.lua` 所使用的设备。有关其方法，请参见 [文件导入/导出设备](../device/file_import_export.md) 参考。

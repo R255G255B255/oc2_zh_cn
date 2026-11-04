@@ -1,7 +1,7 @@
 # 物品
 该索引列出了所有已记录的物品。如果你在找的是方块，请参阅 [方块索引](../block/index.md)。
 
-- [计算机专家手册](manual.md)
+- [电脑专家手册](manual.md)
 - [方块操作模块](block_operations_module.md)
 - [合成模块](crafting_module.md)
 - [文件导入/导出卡](file_import_export_card.md)

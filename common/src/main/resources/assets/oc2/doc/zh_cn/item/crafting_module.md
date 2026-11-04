@@ -1,7 +1,7 @@
-# Crafting Module
-![Some assembly required](item:oc2:crafting_module)
+# 合成模块
+![需要自行组装](item:oc2:crafting_module)
 
-The crafting module provides to [robots](robot.md) the ability to craft items. The top part of the robot's inventory serves as the crafting grid. Crafted items are inserted into the bottom row, starting at the selected slot.
+合成模块为 [机器人](robot.md) 提供了制造物品的能力。机器人物品栏的上半部分用作合成网格。合成出的物品会插入底部一行，从当前选中的槽位开始。
 
 ## API
-Programs control the module through the `crafting` device. See the [crafting device](../device/crafting.md) reference for its methods.
+程序通过 `crafting` 设备控制该模块。有关其方法，请参见 [合成设备](../device/crafting.md) 参考。

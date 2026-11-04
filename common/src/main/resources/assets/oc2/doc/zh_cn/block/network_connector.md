@@ -1,7 +1,7 @@
 # 网络连接器
 ![数据必须流动](block:oc2:network_connector)
 
-网络连接器是组成网络系统的基础部部件以用于连接不同[电脑](computer.md). 使用 [网线](../item/network_cable.md) 以互相连接。
+网络连接器是构建网络的基础部件，用于连接不同的[计算机](computer.md)。使用[网线](../item/network_cable.md)连接各个连接器。
 
 每个连接器也作为中继数据包时的‘跃点’. 数据包只会在丢包前传输过有限的连接器。
 

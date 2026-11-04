@@ -1,27 +1,27 @@
-# Serial Interface Card
-![Serial experiments](item:oc2:serial_interface_card)
+# 串口卡
+![烤串串](item:oc2:serial_interface_card)
 
-The serial interface card allows [computers](../block/computer.md) to read and write serial data from a serial port. Serial data is transmitted on a bus established by [network cables](network_cable.md).
+串口卡允许 [计算机](../block/computer.md) 从串口读取和写入串行数据。串行数据通过 [网线](network_cable.md) 建立的总线进行传输。
 
-A segment is every endpoint connected through [network connectors](../block/network_connector.md) and [network hubs](../block/network_hub.md). It is *multi-drop*: everything one endpoint writes will be readable by every other endpoint. With more than two participants, software needs to filter.
+一个段（segment）就是通过 [网络连接器](../block/network_connector.md) 和 [网络集线器](../block/network_hub.md) 连接起来的每个端点。它是*多点接入*：一个端点写入的所有内容都可以被其他端点读取。参与者超过两个时，软件需要自行过滤。
 
-These cards can be configured to only connect to selected sides (use while holding). This allows using multiple cards to build a custom router, for example.
+这些卡可以被配置为仅连接到指定的侧面（手持时使用）。例如，这允许使用多张卡来构建自定义路由器。
 
-In addition to connectivity, this also allows setting an **address.** This is an arbitrary number in [0, 255) that allows identifying different cards on a bus. Hardware ignores it; software may use it to establish a protocol on top of it. This is purely for convenience.
+除了连通性之外，这也允许设置一个**地址**。这是一个 [0, 255) 范围内的任意数字，用于识别总线上的不同卡。硬件会忽略它；软件可以利用它在其上构建协议。这纯粹是为了方便。
 
-Baud rate must be configured in software and must match between endpoints on a shared bus. The default after a reset is 9600. Misconfiguration will result in corrupted data. Higher baud rates are more likely to cause collisions unless a protocol prevents this, and weaker systems may not process received data fast enough.
+波特率必须在软件中配置，并且共享总线上的各个端点必须一致。复位后的默认值是 9600。配置错误会导致数据损坏。除非协议阻止，否则更高的波特率更容易引起冲突；较弱的系统也可能无法足够快地处理接收到的数据。
 
-Computers *have to be shut down* before installing or removing this component. Installing it while the computer is running will have no effect, removing it may lead to system errors.
+在安装或移除这个组件之前，计算机必须先关闭。运行中安装它不会产生任何效果；移除它可能会导致系统错误。
 
 ## Linux
 
-The card is a plain serial port. The first one in a machine is `/dev/ttyS1`, because `ttyS0` is the built-in terminal. Set the rate endpoints on the segment should commonly use:
+这张卡就是一个普通串口。机器中第一个串口是 `/dev/ttyS1`，因为 `ttyS0` 是内置终端。通常应为该段上的端点设置相同的速率：
 
 `stty -F /dev/ttyS1 9600 raw \`
 `   -echo -crtscts`
 `microcom -s 9600 /dev/ttyS1`
 
-The `oc2.serial` library wraps that, and also reads the address of the card via the HLAPI:
+`oc2.serial` 库对其进行了封装，并且还能通过 HLAPI 读取卡的地址：
 
 `local serial =`
 `  require("oc2.serial")`
@@ -31,41 +31,41 @@ The `oc2.serial` library wraps that, and also reads the address of the card via 
 `local from, message =`
 `  line:receive(5000)`
 
-There is also a MicroPython version with the same API.
+同样也有一个带有相同 API 的 MicroPython 版本。
 
 ## CP/M
 
-CP/M uses the first card as its reader and punch, so BDOS functions 3 and 4 go through it.
+CP/M 使用第一张卡作为其读写终端，因此 BDOS 函数 3 和 4 会经过它。
 
-`STAT CON:=TTY:` switches to the first card as the console, for example to use the computer from a [terminal](../block/terminal.md).  
-`STAT CON:=CRT:` goes back to the built-in one.
+`STAT CON:=TTY:` 切换到第一张卡作为控制台，例如可以从 [终端](../block/terminal.md) 访问计算机。  
+`STAT CON:=CRT:` 则切回内置终端。
 
-`SERBAUD` sets another rate from a divisor: 384 is 300 baud, 96 is 1200, 12 is 9600, 6 is 19200, 1 is 115200.
+`SERBAUD` 使用除数设置另一个速率：384 是 300 波特，96 是 1200，12 是 9600，6 是 19200，1 是 115200。
 
-`TERM` is a dumb terminal on the card: everything typed is written, everything read is printed. `Ctrl-]` quits. Corrupted data prints as `~`.
+`TERM` 是卡上的一个哑终端：所有输入都会被写出，所有读取到的内容都会被打印。`Ctrl-]` 可退出。损坏的数据会显示为 `~`。
 
-`SERIAL.INC` provides utilities for user programs: finding a card's port as well as IO on it, with status results.
+`SERIAL.INC` 为用户程序提供了工具：可用于查找卡的端口及其 I/O，并返回状态结果。
 
-`SERCHAT.Z80` on the system disk is an example program.
+系统盘上的 `SERCHAT.Z80` 是一个示例程序。
 
-## Suggested multi-endpoint framing
+## 建议的多端点帧格式
 
-The serial port reads and writes raw bytes from and to the bus. To associate data with endpoints, the library expects the following framing:
+串口会在总线中读写原始字节。为了将数据和端点关联起来，库期望使用以下帧格式：
 
 `01h  to  from  length  payload...  checksum`
 
-The checksum is `to + from + length` plus every payload byte, overflowing. Address 255 means everyone.
+校验和为 `to + from + length` 加上每一个有效载荷字节的和，发生溢出时回绕。地址 255 表示“所有人”。
 
-## Failure modes
+## 失效模式
 
-Unlike the [network card](network_interface_card.md), errors are not automatically compensated, so programs must handle them accordingly. The following errors categories exist:
+与 [网卡](network_interface_card.md) 不同，错误不会自动被补偿，因此程序必须自行处理。存在以下几类错误：
 
-- **Overrun**: the machine is not reading the port fast enough, bytes are dropped.
-- **Contention**: received data was corrupted because too many senders flooded the bus at the same time.
-- **Collision**: sent data was corrupted because too many senders flooded the bus at the same time.
-- **Noise**: traffic arrived at a baud rate this port is not set to.
+- **Overrun**：机器读取端口的速度不够快，字节被丢弃。
+- **Contention**：接收到的数据损坏，因为太多发送者同时淹没了总线。
+- **Collision**：发送的数据损坏，因为太多发送者同时淹没了总线。
+- **Noise**：流量以该端口未配置的波特率到达。
 
-Error counts can be read via the HLAPI and MLAPI, see below.
+可通过 HLAPI 和 MLAPI 读取错误计数，见下文。
 
 ## API
-Programs can read the card's address, baud rate, port location and error counters through the `serial` device. See the [serial device](../device/serial.md) reference for its methods. **Important**: device order in the HLAPI and MLAPI may differ from the order devices were mounted, i.e. the order they are listed in the device tree/enumeration window.
+程序可以通过 `serial` 设备读取卡的地址、波特率、端口位置和错误计数器。有关其方法，请参见 [串口设备](../device/serial.md) 参考。**重要**：HLAPI 和 MLAPI 中的设备顺序可能与设备挂载顺序不同，也就是它们在设备树/枚举窗口中的顺序。

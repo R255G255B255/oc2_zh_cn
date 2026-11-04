@@ -1,11 +1,11 @@
-# Flash Drive
-![Savior of the Universe](block:oc2:flash_drive)
+# 闪存驱动器
+![拯救全局！（指存储空间）](block:oc2:flash_drive)
 
-The flash drive exposes [flash memory](../item/flash_memory.md) to a [computer](computer.md) as a plain block device. Where the [disk drive](disk_drive.md) provides access to floppies, this one provides access to flash memory. In particular, this enables use of custom firmware.
+闪存驱动器将 [闪存](../item/flash_memory.md) 以普通块设备的形式暴露给 [计算机](computer.md)。[磁盘驱动器](disk_drive.md) 提供对软盘的访问，而这个设备则提供对闪存的访问。特别地，这使得自定义固件的使用成为可能。
 
-Flash memory can be inserted and removed at runtime. The drive itself cannot: computers *have to be shut down* before installing or removing it.
+闪存可以在运行时插入和移除。驱动器本身不能：在安装或移除它之前，计算机必须先关闭。
 
-On a Linux system, the drive appears as a `/dev/vdX` device, following any installed hard drives, just like a floppy disk drive. It is a raw block device.
+在 Linux 系统中，驱动器会显示为 `/dev/vdX` 设备，并在已安装的硬盘之后按顺序排列，就像软盘驱动器一样。它是一个原始块设备。
 
-To write your firmware to the flash memory, *erasing what was there before*:  
+要将固件写入闪存，*会擦除原有内容*：  
 `dd if=<firmware file> of=/dev/vdX bs=512 conv=fsync`

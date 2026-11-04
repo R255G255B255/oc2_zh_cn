@@ -1,7 +1,7 @@
-# Tank Operations Module
-![Bigger on the inside](item:oc2:tank_operations_module)
+# 液箱操作模块
+![实际容量大于物理外观](item:oc2:tank_operations_module)
 
-The tank operations module provides to [robots](robot.md) the ability to insert and extract fluids from tanks in the world. This supports block and entity tanks, as well as container items in the robot's inventory. Without a tank present, given sufficient space, it allows filling or draining fluids into and from the world.
+液箱操作模块为 [机器人](robot.md) 提供了从世界中的液箱中插入和提取流体的能力。它支持方块液箱、实体液箱，以及机器人物品栏中的容器物品。在没有液箱存在时，只要有足够空间，它也允许将流体填入世界或从世界中抽出。
 
 ## API
-Programs control the module through the `tank_operations` device. See the [tank operations device](../device/tank_operations.md) reference for its methods.
+程序通过 `tank_operations` 设备控制该模块。有关其方法，请参见 [液箱操作设备](../device/tank_operations.md) 参考。

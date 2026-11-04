@@ -1,12 +1,12 @@
-# Floppy
-![It's not the floppy that bends](item:oc2:floppy)
+# 软盘
+![软盘不弯](item:oc2:floppy)
 
-Floppy disks are removable media. This means they can be inserted and removed from [disk drives](../block/disk_drive.md) without the [computer](../block/computer.md) using the disk drive having to reboot to use them.
+软盘是可移动介质。这意味着它们可以插入和从 [磁盘驱动器](../block/disk_drive.md) 中移除，而无需让使用该磁盘驱动器的 [计算机](../block/computer.md) 重启即可使用它们。
 
-Crafting a blank floppy together with a [Z80 processor](cpu_z80.md) writes the CP/M system to it. That is the disk a Z80 machine boots from. Crafting a written floppy with a [wrench](wrench.md) erases it back to a blank one.
+把一张空白软盘与 [Z80 处理器](cpu_z80.md) 合成在一起，会把 CP/M 系统写入其中。这就是 Z80 机器启动时所使用的磁盘。把已写入内容的软盘与 [扳手](wrench.md) 合成会把它擦除回空白软盘。
 
-[Robots](robot.md) have a floppy slot, as they cannot use disk drives.
+[机器人](robot.md) 有自己的软盘槽，因为它们不能使用磁盘驱动器。
 
-Please see the [disk drive](../block/disk_drive.md) manual entry for some useful commands when working with floppies.
+在处理软盘时，请参见 [磁盘驱动器](../block/disk_drive.md) 手册条目，其中包含一些有用的命令。
 
-Storage media are not perfect, and a floppy left unused for a long time may suffer from bit rot and lose its contents. Format corrupted floppies using the [wrench](wrench.md). Interestingly, this only seems to happen when there are a lot of storage devices in the world.
+存储介质并不完美，一张长期未使用的软盘可能会出现位腐化，并丢失内容。使用 [扳手](wrench.md) 对损坏的软盘进行格式化。值得一提的是，这种情况似乎只会在世界中有很多存储设备时发生。

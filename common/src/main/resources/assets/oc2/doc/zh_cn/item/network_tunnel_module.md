@@ -1,12 +1,12 @@
-# Network Tunnel Module
-![Tunnel vision?](item:oc2:network_tunnel_module)
+# 网络隧道模块
+![聚焦一点而忽略大局](item:oc2:network_tunnel_module)
 
-The network tunnel module allows [robots](robot.md) to send messages to and receive messages from another tunnel device (tunnel modules and [tunnel cards](network_tunnel_card.md)) linked to the module.
+网络隧道模块允许 [机器人](robot.md) 向另一个已连接到该模块上的隧道设备发送消息，并接收消息（隧道模块和 [隧道卡](network_tunnel_card.md)都属于该类别）。
 
-To link two tunnel devices, open their configuration interface (use while holding), and insert the other tunnel device to link to. This allows linking any two network tunnel devices.
+要链接两个隧道设备，请打开它们的配置界面（手持时使用），并插入另一个要连接的隧道设备。这样即可链接任意两个网络隧道设备。
 
-When using the default Linux distribution, this device will provide a regular ethernet device. Network setup can either be performed manually, or using the convenience script `setup-network.lua`. This script provides the option to either use a fixed-address setup, or a DHCP setup. For a DHCP setup, exactly one computer in the network must act as a DHCP server.
+在使用默认 Linux 发行版时，这个设备会提供一个普通的以太网设备。网络设置既可以手动完成，也可以使用便捷脚本 `setup-network.lua`。这个脚本提供两种选项：固定地址配置或 DHCP 配置。对于 DHCP 配置，网络中必须恰好有一台计算机充当 DHCP 服务器。
 
-After initial setup, use the command `ifconfig` to see the currently used IP address.
+完成初次设置后，使用命令 `ifconfig` 可以查看当前使用的 IP 地址。
 
-Robots *have to be shut down* before installing or removing this component. Installing it while the robot is running will have no effect, removing it may lead to system errors.
+在安装或移除这个组件之前，机器人必须先关闭。运行中安装它不会产生任何效果；移除它可能会导致系统错误。

@@ -1,11 +1,11 @@
-# Scanner Module
-![That's inside the room!](item:oc2:scanner_module)
+# 扫描模块
+![近在眼前](item:oc2:scanner_module)
 
-The scanner module lets [robots](robot.md) inspect what is around them. Where the robot's built-in `detect` only rudimentary data, the scanner can provide specifics about the block, the fluid and any creatures and objects.
+扫描模块允许 [机器人](robot.md) 检查周围环境。机器人内置的 `detect` 只能提供较基础的信息，而扫描模块则可以提供关于方块、流体以及任何生物和物体的详细信息。
 
-It can also scan the wider area around the robot, measuring block hardness and detecting entities in a 7x7x7 cube around the robot. This has been successfully employed find cavities and ore deposits.
+它也可以扫描机器人周围更大范围的区域，测量方块硬度，并检测机器人周围 7x7x7 立方体内的实体。这已经被成功用于寻找空洞和矿脉。
 
-Scan results are relative to the robot and aligned to the built-in compass. Also see the "Position" section of the [robot device](../device/robot.md).
+扫描结果相对于机器人，并与内置指南针对齐。另见 [机器人设备](../device/robot.md) 中的“Position”部分。
 
 ## API
-Programs control the module through the `scanner` device. See the [scanner device](../device/scanner.md) reference for its methods and the layout of scan results.
+程序通过 `scanner` 设备控制该模块。有关其方法以及扫描结果布局，请参见 [扫描设备](../device/scanner.md) 参考。
