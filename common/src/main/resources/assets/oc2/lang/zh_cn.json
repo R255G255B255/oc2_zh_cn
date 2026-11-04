@@ -119,7 +119,7 @@
 
   "gui.oc2.computer.capture_input.capt": "捕获输入",
   "gui.oc2.computer.capture_input.desc": "当开启并且鼠标移动到终端内时，将捕获所有的输入，包括ESC键",
-  "gui.oc2.computer.power.on": "上电",
+  "gui.oc2.computer.power.on": "开机",
   "gui.oc2.computer.power.shutdown": "关机",
   "gui.oc2.computer.power.reboot": "Shift: 重启",
   "gui.oc2.computer.power.power_off": "Ctrl: 断电",
