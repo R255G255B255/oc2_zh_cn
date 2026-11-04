@@ -31,4 +31,3 @@ Lua 在与高级接口设备([HLAPI](hlapi.md)) 交互时起到关键作用，�
 - [机器人技术](robotics.md)
 - [网络](networking.md)
 
-*翻译未完成*
