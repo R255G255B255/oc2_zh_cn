@@ -1,5 +1,5 @@
 # 基本
-本文档包含有关 [电脑](block/computer.md) 如何工作的一些基本信息。 这并不一定意味着这些信息很容易阅读。 这里的基本是指所使用的一般概念。
+本文档包含有关 [电脑](block/computer.md) 如何工作的一些基本信息。 这并不一定意味着这些内容很简单。 这里的基本是指所使用的一般概念。
 
 ## 架构
 电脑需要CPU运行，可选CPU有 [Z80](item/cpu_z80.md) 和 [RISC-V](item/cpu_riscv.md)。详细信息请查看各自文档，Z80可以运行CP/M并通过[MLAPI](mlapi.md)连接设备，RISC-V可以运行Linux并通过[HLAPI]连接设备。

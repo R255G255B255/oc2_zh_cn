@@ -9,4 +9,4 @@
 
 他还可以清除[闪存](flash_memory.md)和[硬盘](hard_drive.md)的已有数据
 
-*螺丝刀扳手原名为“Scrench”，即螺丝刀“Screwdriver”和扳手“wrench”的组合。*
+*螺丝刀扳手英文原名为“Scrench”，即螺丝刀“Screwdriver”和扳手“wrench”的组合。*

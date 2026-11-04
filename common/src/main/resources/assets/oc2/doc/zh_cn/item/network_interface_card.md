@@ -1,12 +1,12 @@
 # 网络接口卡
 ![与陌生人对话](item:oc2:network_interface_card)
 
-网络接口卡 (NIC) 允许 [电脑](../block/computer.md) 接受和发送信息从一个与电脑相连的网络连接器 [网络连接器](../block/network_connector.md).
+网络接口卡 (NIC) 允许 [电脑](../block/computer.md) 从一个与电脑相连的网络连接器 [网络连接器](../block/network_connector.md)收发信息。
 
-这些卡可以被设置为仅从特定的面进行连接(在手中设置). 这允许多张卡组成一个自定义的路由器，例如。
+这些卡可以被设置为仅从特定的侧面进行连接(手持时使用网卡设置). 这样就可以，例如使用多张网卡组成一个自定义路由器
 
-在使用一个标准的Linux发行版时, 这个设备将会被识别为一个标准的以太网设备。 网络可以有用户设置, 或使用一个快捷设置脚本`setup-network.lua`. 这个脚本也提供了修复IP地址的选项, 或将其设置为DHCP(动态IP分配). 在DHCP设置下, 实际上需要一个网络系统内的电脑承担DHCP服务器的任务。
+在使用默认Linux发行版时, 这个设备会提供一个普通的以太网设备，网络设置既可以手动完成，也可以使用便携脚本`setup-network.lua`。这个脚本提供两种选项：静态地址配置或DHCP配置。对于DHCP配置，网络中必须有一台电脑充当DHCP服务器。
 
-在完成初始设置后, 使用 `ifconfig` 命令以查看当前使用到的IP.
+完成初次设置后，使用 `ifconfig` 命令以查看当前使用的IP。
 
-Computers *have to be shut down* before installing or removing this component. Installing it while the computer is running will have no effect, removing it may lead to system errors.
+在安装或卸载这个组件之前，电脑必须被关闭，运行中安装它不会产生任何效果，而移除它可能会导致系统错误。

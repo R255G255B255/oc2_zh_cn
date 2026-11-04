@@ -11,7 +11,7 @@ Lua 在与高级接口设备([HLAPI](hlapi.md)) 交互时起到关键作用，�
 
 与之相对的就是原生设备，例如 [硬盘](item/hard_drive.md) 和 [网卡](item/network_interface_card.md)。 这些设备都由原生 Linux 驱动程序控制，并且在添加或删除时还需要重新启动系统。 不过，平常使用的设备几乎都是 HLAPI 设备。
 
-对于更具冒险精神的人，还有 [Z80 架构](item/cpu_z80.md) ，它提供了一个成本更低但功能也更有限的环境，操作系统是 CP/M。它可以与中级设备([MLAPI](mlapi.md))交互，比如[红石接口方块](block/redstone_interface.md)。这个操作系统附带一些实用工具，特别是 `DEVLIB.INC` 和 `OCAPI.INC` 库。
+对于更具冒险精神的人，还有 [Z80 架构](item/cpu_z80.md) ，它提供了一个成本更低但功能也更有限的环境，操作系统是 CP/M。它可以与中级设备([MLAPI](mlapi.md))交互，例如[红石接口方块](block/redstone_interface.md)。这个操作系统附带一些实用工具，特别是 `DEVLIB.INC` 和 `OCAPI.INC` 库。
 
 ## 快速入门
 如果你只想马上使用 [电脑](block/computer.md) ，请阅读 [入门指南](getting_started.md)。 它讲了如何组装你的第一台 [电脑](block/computer.md) 和如何使用。 

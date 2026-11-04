@@ -1,8 +1,9 @@
 # 物品
-该索引列出了所有被记录的物品。 如果你寻找的是一个方块，请参阅 [方块索引](../block/index.md)。
+该索引列出了所有已记录的物品。如果你在找的是方块，请参阅 [方块索引](../block/index.md)。
 
-- [方块操作模块](block_operations_module.md)
 - [计算机专家手册](manual.md)
+- [方块操作模块](block_operations_module.md)
+- [合成模块](crafting_module.md)
 - [文件导入/导出卡](file_import_export_card.md)
 - [闪存](flash_memory.md)
 - [软盘](floppy.md)
@@ -14,6 +15,11 @@
 - [网络隧道卡](network_tunnel_card.md)
 - [网络隧道模块](network_tunnel_module.md)
 - [红石接口卡](redstone_interface_card.md)
+- [RISC-V 处理器](cpu_riscv.md)
 - [机器人](robot.md)
-- [扳手-撬棍多用途工具](wrench.md)
+- [扫描模块](scanner_module.md)
+- [螺丝刀扳手](wrench.md)
+- [串口卡](serial_interface_card.md)
 - [声卡](sound_card.md)
+- [液箱操作模块](tank_operations_module.md)
+- [Z80 处理器](cpu_z80.md)

@@ -5,8 +5,8 @@
 首先，您需要一台电脑，以及几个配件。 如果你还没有，得制作这些：
 - 1x [电脑](block/computer.md)
 - 1x [RISC-V处理器](item/cpu_riscv.md)
-- 1x **Linux固件[闪存](item/flash_memory.md)**
-- 1x **Linux文件系统[硬盘](item/hard_drive.md)**
+- 1x **[Linux固件](item/flash_memory.md)**
+- 1x **[Linux文件系统](item/hard_drive.md)**
 - 3x 4M [内存](item/memory.md)
 
 搜集好配件后，放置电脑，对着使用螺丝刀扳手打开装机面板。 或者，对着电脑打开终端屏幕，然后使用左侧的切换按钮切换到装机面板。 在这里，放入你准备的处理器、闪存固件、内存和硬盘。
